@@ -11,6 +11,11 @@ function actualizarContador() {
   document.querySelector("#contador").textContent = pendientes + " pendientes";
 }
 
+function mostrarEstadoVacio() {
+  const aviso = document.querySelector("#vacio");
+  aviso.hidden = TAREAS.length > 0;
+}
+
 function render() {
   const lista = document.querySelector("#lista");
   lista.innerHTML = "";
@@ -21,6 +26,6 @@ function render() {
     lista.appendChild(li);
   });
   actualizarContador();
+  mostrarEstadoVacio();
 }
-
 render();
